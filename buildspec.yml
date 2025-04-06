@@ -11,5 +11,6 @@ phases:
       - npm run build
 artifacts:
   files:
-    - '**/*'
+    - "**/*"
   exclude-paths: node_modules/**/*
+  base-directory: out
