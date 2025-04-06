@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+  build:
+    commands:
+      - env | grep APP_ | sed -e "s/^APP_//" > .env
+      - npm install --force
+      - npm run build
+artifacts:
+  files:
+    - '**/*'
+  exclude-paths: node_modules/**/*
